@@ -45,7 +45,11 @@ export default function Courses({ showEnrollLinks }) {
           <div key={index} className="courses-card">
             <h3 className="courses-card-title">{course.title}</h3>
             <p className="courses-card-text">{course.description}</p>
-            {showEnrollLinks ? (
+            {course.title === "Montessori Education (Age 2–6)" ? (
+              <a href="https://rdreamzmontessori.com/" target="_blank" rel="noopener noreferrer">
+                <button className="enroll-button explore-button">Explore</button>
+              </a>
+            ) : showEnrollLinks ? (
               <Link to="/enroll" className="enroll-link">
                 <button className="enroll-button">Enroll Now</button>
               </Link>

@@ -57,6 +57,7 @@ export default function Footer() {
           <a href="/courses" style={styles.link}>Courses</a>
           <a href="/enroll" style={styles.link}>Enroll</a>
         </div>
+        
 
         <div style={styles.column}>
           <h4 style={styles.heading}>Follow Us</h4>

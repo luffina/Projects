@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Dashboard.css';
-import demoData from '../mock/demo.json'; // Ensure this file exists
+import demoData from './demo.json';
+import Calendar from '../OnLogin/Calender';
 
 export default function Dashboard() {
   const [courses, setCourses] = useState([]);
   const [userId, setUserId] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Simulate userId from localStorage or fallback
     const storedId = localStorage.getItem('userId');
     const fallbackId = 'demo_12233';
     const uid = storedId || fallbackId;
@@ -16,15 +18,19 @@ export default function Dashboard() {
     if (user) setCourses(user.courses);
   }, []);
 
+  const handleNavClick = (path) => {
+    navigate(path);
+  };
+
   return (
     <div className="dashboard">
       <header className="dashboard-header">
         <img src="/assets/logo.png" alt="Logo" className="dashboard-logo" />
         <div className="dashboard-nav">
-          <span>Dashboard</span>
-          <span>Calendar</span>
-          <span>Search Courses</span>
-          <span>My Courses</span>
+          <span onClick={() => handleNavClick('/dashboard')}>Dashboard</span>
+          <span onClick={() => handleNavClick('/calendar')}>Calendar</span>
+          <span onClick={() => handleNavClick('/search-courses')}>Search Courses</span>
+          <span onClick={() => handleNavClick('/my-courses')}>My Courses</span>
         </div>
         <div className="dashboard-user">{userId}</div>
       </header>
@@ -80,7 +86,9 @@ export default function Dashboard() {
             <div>
               <h4>Calendar</h4>
               <p>June 2025</p>
-              <div className="calendar-grid">[calendar here]</div>
+              <div className="calendar-grid">
+                <Calendar />
+              </div>
             </div>
           </div>
         </main>
