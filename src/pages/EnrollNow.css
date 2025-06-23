@@ -1,0 +1,100 @@
+.enroll-container {
+  max-width: 600px;
+  margin: 3rem auto;
+  background: #fff0f5;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.enroll-heading {
+  text-align: center;
+  font-size: 2rem;
+  color: #ff6a28;
+  margin-bottom: 0.5rem;
+}
+
+.enroll-sub {
+  text-align: center;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.enroll-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.enroll-form input,
+.enroll-form select {
+  padding: 0.8rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.enroll-form input:focus,
+.enroll-form select:focus {
+  outline: none;
+  border-color: #ff6a28;
+  box-shadow: 0 0 0 3px rgba(255, 106, 40, 0.2);
+}
+
+.enroll-form button {
+  background: #ff6a28;
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.enroll-form button:hover {
+  background: #e65a1e;
+}
+
+.contact-box {
+  margin-top: 3rem;
+  background: #fff9e6;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.contact-box h2 {
+  margin-bottom: 1rem;
+  color: #002b5c;
+}
+
+.contact-box p {
+  margin: 0.3rem 0;
+  color: #333;
+}
+
+.contact-box a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #ff6a28;
+  text-decoration: none;
+  font-weight: bold;
+}

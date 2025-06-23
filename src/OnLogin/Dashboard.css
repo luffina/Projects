@@ -1,0 +1,113 @@
+/* Dashboard.css */
+.dashboard {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafe;
+  min-height: 100vh;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #001f42;
+  color: white;
+}
+
+.dashboard-logo {
+  height: 50px;
+}
+
+.dashboard-nav span {
+  margin: 0 1rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.dashboard-user {
+  background-color: #ffffff33;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.dashboard-main {
+  display: flex;
+  padding: 2rem;
+}
+
+.dashboard-sidebar {
+  width: 200px;
+  margin-right: 2rem;
+}
+
+.dashboard-content {
+  flex: 1;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.section h3 {
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.filters select,
+.filters button {
+  margin-left: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.side-widgets {
+  display: flex;
+  gap: 2rem;
+}
+
+.side-widgets > div {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+  flex: 1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-grid {
+  margin-top: 1rem;
+  background-color: #f1f1f1;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: #555;
+}

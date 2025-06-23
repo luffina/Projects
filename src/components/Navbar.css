@@ -1,0 +1,153 @@
+/* Navbar.css */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 40px;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #e0e0e0;
+  font-family: 'Segoe UI', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navbar-logo {
+  width: 50px;
+  margin-right: 12px;
+}
+
+.navbar-brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.brand-name {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1f1f1f;
+}
+
+.brand-tagline {
+  font-size: 14px;
+  font-style: italic;
+  color: #666;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a,
+.dropdown-toggle {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-links a:hover,
+.dropdown-toggle:hover {
+  color: #00bcd4;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 28px;
+  left: 0;
+  background-color: #fff;
+  padding: 10px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  min-width: 160px;
+  z-index: 10;
+}
+
+.dropdown-content li {
+  padding: 8px 16px;
+}
+
+.dropdown-content li a {
+  color: #333;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.navbar-icons {
+  display: flex;
+  gap: 16px;
+}
+
+.navbar-icons a {
+  color: #333;
+  font-size: 18px;
+  transition: color 0.2s;
+}
+
+.navbar-icons a:hover {
+  color: #00bcd4;
+}
+.navbar-logo {
+  height: 60px; /* Increase the size */
+  width: auto;
+  margin-right: 15px;
+  object-fit: contain;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navbar-brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brand-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #001F42;
+}
+
+.brand-tagline {
+  font-style: italic;
+  font-size: 1rem;
+  color: #555;
+}
+/* Add this in Navbar.css */
+.navbar-login .login-btn {
+  background-color: #00c3c3;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+.navbar-login .login-btn:hover {
+  background-color: #00a7a7;
+}

@@ -1,0 +1,282 @@
+[
+  {
+    "year": "Year 1/2",
+    "subject": "Hindi",
+    "day": "Saturday",
+    "time": "10am-11am",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$150"
+  },
+  {
+    "year": "Year 1/2",
+    "subject": "Maths and English",
+    "day": "Saturday",
+    "time": "11am-1pm",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$650"
+  },
+  {
+    "year": "Year 3",
+    "subject": "Maths and English",
+    "day": "Wednesday",
+    "time": "4pm-6pm",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$720"
+  },
+  {
+    "year": "Year 3",
+    "subject": "Maths and English",
+    "day": "Saturday",
+    "time": "11am-1pm",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$720"
+  },
+  {
+    "year": "Year 4",
+    "subject": "Maths and English",
+    "day": "Tuesday",
+    "time": "4pm-6pm",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$740"
+  },
+  {
+    "year": "Year 4",
+    "subject": "Maths and English",
+    "day": "Friday",
+    "time": "4pm-6pm",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$740"
+  },
+  {
+    "year": "Year 4",
+    "subject": "Science",
+    "day": "Thursday",
+    "time": "4pm-5pm",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$150"
+  },
+  {
+    "year": "Year 5",
+    "subject": "Maths and English",
+    "day": "Thursday",
+    "time": "4pm-6pm",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$750"
+  },
+  {
+    "year": "Year 5",
+    "subject": "Maths and English",
+    "day": "Friday",
+    "time": "5pm-7pm",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$750"
+  },
+  {
+    "year": "Year 5",
+    "subject": "Science",
+    "day": "Friday",
+    "time": "7pm-8pm",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$150"
+  },
+  {
+    "year": "Year 6",
+    "subject": "Maths and English",
+    "day": "Thursday",
+    "time": "5pm-7pm",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$760"
+  },
+  {
+    "year": "Year 6",
+    "subject": "Maths and English",
+    "day": "Friday",
+    "time": "6pm-8pm",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$760"
+  },
+  {
+    "year": "Year 6",
+    "subject": "Science",
+    "day": "Friday",
+    "time": "5pm-6pm",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$150"
+  },
+  {
+    "year": "SEAL Prep/Scholarship 2025 Entry",
+    "subject": "Maths",
+    "day": "Thursday",
+    "time": "5pm-7pm",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$775"
+  },
+  {
+    "year": "Year 7",
+    "subject": "Maths",
+    "day": "Monday",
+    "time": "4pm-6pm",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$840"
+  },
+  {
+    "year": "Regular Year 7",
+    "subject": "Maths and English",
+    "day": "Friday",
+    "time": "6pm-8pm",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$840"
+  },
+  {
+    "year": "Selective Prep Year 8, 9, 10",
+    "subject": "Maths 2024",
+    "day": "Saturday",
+    "time": "9am-11am",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$850"
+  },
+  {
+    "year": "Selective Prep Year 8, 9, 10",
+    "subject": "English 2024 Entry",
+    "day": "Sunday",
+    "time": "9am-11am",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$850"
+  },
+  {
+    "year": "Selective Prep/Scholarship Year 8, 9 & 10",
+    "subject": "Maths 2025",
+    "day": "Thursday",
+    "time": "6pm-8pm",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$1,150"
+  },
+  {
+    "year": "Selective Prep/Scholarship Year 8, 9 & 10",
+    "subject": "English 2025 Entry",
+    "day": "Wednesday",
+    "time": "7pm-8:30pm",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$1,150"
+  },
+  {
+    "year": "Year 8",
+    "subject": "Maths and English",
+    "day": "Monday",
+    "time": "4pm-7pm",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$1,190"
+  },
+  {
+    "year": "Year 9",
+    "subject": "Maths",
+    "day": "Tuesday",
+    "time": "7pm-8:30pm",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$630"
+  },
+  {
+    "year": "Year 9",
+    "subject": "Maths and English",
+    "day": "Saturday",
+    "time": "12pm-2:30pm",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$630"
+  },
+  {
+    "year": "Year 10",
+    "subject": "Maths",
+    "day": "Tuesday",
+    "time": "5pm-7pm",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$840"
+  },
+  {
+    "year": "Year 11",
+    "subject": "Maths V Methods",
+    "day": "Wednesday",
+    "time": "6pm-8pm",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$900"
+  },
+  {
+    "year": "Year 11",
+    "subject": "Chemistry V",
+    "day": "Tuesday",
+    "time": "6pm-7:30pm",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$650"
+  },
+  {
+    "year": "Year 12",
+    "subject": "Maths T Methods",
+    "day": "Wednesday",
+    "time": "4pm-6pm",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$900"
+  },
+  {
+    "year": "Year 12",
+    "subject": "Biology T",
+    "day": "Wednesday",
+    "time": "6pm-7:30pm",
+    "sessions": 10,
+    "from": "21-Jul-25",
+    "to": "09-Sep-25",
+    "fee": "$650"
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "userId": "demo_12233",
+    "courses": [
+      {
+        "name": "Year 5 Maths & English",
+        "image": "/assets/year5-maths.png"
+      },
+      {
+        "name": "Year 6 Science",
+        "image": "/assets/year6-science.png"
+      }
+    ]
+  },
+  {
+    "userId": "demo_99887",
+    "courses": [
+      {
+        "name": "Selective Entry Prep",
+        "image": "/assets/selective-prep.png"
+      }
+    ]
+  }
+]
