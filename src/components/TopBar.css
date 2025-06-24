@@ -1,0 +1,60 @@
+/* TopBar.css */
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 2rem;
+  background-color: #000;
+  color: white;
+  font-size: 0.9rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  z-index: 2000;
+}
+
+.top-left, .top-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.icon {
+  margin-right: 0.4rem;
+  color: #ff8a50;
+}
+
+.top-left span {
+  margin-right: 1.5rem;
+}
+
+.top-right a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.top-right a:hover {
+  color: #ff8a50;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.8rem 1rem;
+  }
+
+  .top-left, .top-right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .top-left span {
+    margin-right: 0;
+  }
+}

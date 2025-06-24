@@ -1,113 +1,151 @@
-/* Dashboard.css */
-.dashboard {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9fafe;
+:root {
+  --primary-color: #81b441; /* Envato green */
+  --dark-color: #2c3e50;
+  --light-bg: #f8f9fa;
+  --accent-color: #f39c12;
+  --card-bg: #ffffff;
+  --text-color: #333;
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Overall layout */
+.dashboard-new {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text-color);
   min-height: 100vh;
 }
 
-.dashboard-header {
+/* Header Banners */
+.dashboard-banner {
   display: flex;
-  justify-content: space-between;
+  overflow-x: auto;
+}
+
+.dashboard-banner img {
+  width: 25%;
+  height: 200px;
+  object-fit: cover;
+  border-right: 1px solid #ddd;
+}
+
+/* Top Navigation Bar */
+.dashboard-menu {
+  display: flex;
+  justify-content: space-around;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #001f42;
+  background-color: var(--primary-color);
+  padding: 1rem;
   color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-shadow: var(--shadow);
 }
 
-.dashboard-logo {
-  height: 50px;
-}
-
-.dashboard-nav span {
-  margin: 0 1rem;
+.dashboard-menu div {
   cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.dashboard-menu div:hover {
+  transform: scale(1.05);
+  text-decoration: underline;
+}
+
+/* About Section */
+.dashboard-about {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  text-align: center;
+  margin: 1rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.dashboard-about h2 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Course Categories */
+.dashboard-categories {
+  padding: 2rem;
+  margin: 1rem;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.category-card {
+  padding: 1rem;
+  background-color: var(--light-bg);
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  text-align: center;
   font-weight: 500;
 }
 
-.dashboard-user {
-  background-color: #ffffff33;
-  padding: 0.3rem 1rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-}
-
-.dashboard-main {
-  display: flex;
+/* Featured Courses */
+.dashboard-featured {
   padding: 2rem;
-}
-
-.dashboard-sidebar {
-  width: 200px;
-  margin-right: 2rem;
-}
-
-.dashboard-content {
-  flex: 1;
-}
-
-.section {
-  margin-bottom: 2rem;
-}
-
-.section h3 {
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.card {
-  display: flex;
-  align-items: center;
-  padding: 1rem;
-  border: 1px solid #ddd;
+  margin: 1rem;
+  background-color: var(--card-bg);
   border-radius: 8px;
-  margin-bottom: 1rem;
-  background: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow);
 }
 
-.card img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  margin-right: 1rem;
-}
-
-.filters {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.filters select,
-.filters button {
-  margin-left: 0.5rem;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-.side-widgets {
-  display: flex;
-  gap: 2rem;
-}
-
-.side-widgets > div {
-  background: #fff;
-  padding: 1rem;
-  border-radius: 6px;
-  flex: 1;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.calendar-grid {
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
   margin-top: 1rem;
-  background-color: #f1f1f1;
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-  color: #555;
+}
+
+.featured-card {
+  padding: 1rem;
+  background-color: var(--light-bg);
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.featured-card button {
+  margin-top: 0.5rem;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.featured-card button:hover {
+  background-color: #d78c0c;
+}
+
+/* Calendar Section */
+.dashboard-calendar {
+  padding: 2rem;
+  margin: 1rem;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+/* Footer */
+.dashboard-footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--dark-color);
+  color: white;
+  margin-top: 2rem;
 }

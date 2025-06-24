@@ -10,6 +10,11 @@ import About from './components/AboutSection';
 import Login from './pages/Login';
 import Dashboard from './OnLogin/Dashboard';
 import Calendar from './OnLogin/Calender';
+import TopBar from './components/TopBar';
+import Testimonials from './components/Testimonials';
+import AmcOlympiad from './components/Special/AmcOlympiad';
+import IcasPrep from './components/Special/ICASPrep';
+import NaplanPrep from './components/Special/NaplanPrep';
 
 // Wrapper to conditionally show Navbar
 function LayoutWrapper() {
@@ -18,6 +23,7 @@ function LayoutWrapper() {
 
   return (
     <>
+      <TopBar />
       {!hideNavbarRoutes.includes(location.pathname) && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
@@ -28,9 +34,12 @@ function LayoutWrapper() {
         <Route path="/book" element={<Booking />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/calender" element={<Calendar />} />
-
-
+        <Route path="/calendar" element={<Calendar />} />
+        <Route path="/testimonials" element={<Testimonials />} />
+        <Route path="/amc-olympiad" element={<AmcOlympiad />} />
+        <Route path="/special/icas" element={<IcasPrep />} />
+        <Route path="/special/naplan" element={<NaplanPrep />} />
+        {/* Add more routes as needed */}
       </Routes>
     </>
   );
