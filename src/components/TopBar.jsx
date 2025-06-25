@@ -9,13 +9,8 @@ export default function TopBar() {
       <div className="top-left">
         {/* Logo as Link to Home */}
         <Link to="/">
-          <img
-            src="/assets/logo.png"
-            alt="MathSciLab Logo"
-            className="top-logo"
-          />
+          <img src="/assets/logo.png" alt="MathSciLab Logo" className="top-logo" />
         </Link>
-
         {/* Contact Info */}
         <div className="contact-info">
           <FaPhoneAlt className="icon" />
@@ -24,7 +19,6 @@ export default function TopBar() {
           <span>info@mathscilab.com.au</span>
         </div>
       </div>
-
       {/* Quick Links */}
       <div className="top-right">
         <Link to="/courses">Courses</Link>

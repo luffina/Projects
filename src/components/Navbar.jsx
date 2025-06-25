@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
@@ -19,7 +19,7 @@ export default function Navbar() {
   return (
     <nav className={`main-navbar ${isSticky ? 'sticky show' : ''}`}>
       <div className="nav-content">
-        <h1 className="brand-logo">THE LEARNING LAB</h1>
+        <h1 className="brand-logo">MATH SCI LAB</h1>
         <ul className="nav-links">
           {/* About Us Dropdown */}
           <li className="has-dropdown">
@@ -70,8 +70,16 @@ export default function Navbar() {
             </ul>
           </li>
 
-          <li><Link to="/whatsapp">WHATSAPP US</Link></li>
-          <li><Link to="/contact" className="contact-btn">CONTACT US</Link></li>
+<li>
+  <a
+    href="https://wa.me/61484791052"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    WHATSAPP US
+  </a>
+</li>
+          <li><Link to="/enroll" className="contact-btn">CONTACT US</Link></li>
         </ul>
       </div>
     </nav>

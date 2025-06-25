@@ -15,6 +15,8 @@ import Testimonials from './components/Testimonials';
 import AmcOlympiad from './components/Special/AmcOlympiad';
 import IcasPrep from './components/Special/ICASPrep';
 import NaplanPrep from './components/Special/NaplanPrep';
+import Footer from './components/Footer';
+import ScrollToTop from './ScrollToTop';
 
 // Wrapper to conditionally show Navbar
 function LayoutWrapper() {
@@ -41,6 +43,7 @@ function LayoutWrapper() {
         <Route path="/special/naplan" element={<NaplanPrep />} />
         {/* Add more routes as needed */}
       </Routes>
+      <Footer />
     </>
   );
 }
@@ -48,6 +51,7 @@ function LayoutWrapper() {
 export default function App() {
   return (
     <Router>
+       <ScrollToTop />
       <LayoutWrapper />
     </Router>
   );

@@ -5,7 +5,6 @@ import Features from './Features';
 import About from './AboutSection';
 import Courses from './Courses';
 import Testimonials from './Testimonials';
-import Footer from './Footer';
 
 export default function Home() {
   return (
@@ -15,7 +14,6 @@ export default function Home() {
       <About />
       <Courses />
       <Testimonials />
-      <Footer />
     </>
   );
 }

@@ -63,7 +63,7 @@ export default function Footer() {
 
         <div style={styles.column}>
           <h4 style={styles.heading}>SPECIAL PROGRAMMES</h4>
-          <Link to="/special/amc-olympiad" style={styles.link}>Maths Olympiad</Link>
+          <Link to="/amc-olympiad" style={styles.link}>Maths Olympiad</Link>
           <Link to="/special/icas" style={styles.link}>ICAS Prep Program</Link>
           <Link to="/special/naplan" style={styles.link}>NAPLAN Preparation</Link>
         </div>
