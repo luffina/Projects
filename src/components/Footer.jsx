@@ -52,7 +52,7 @@ export default function Footer() {
           <Link to="/curriculum" style={styles.link}>Our Curriculum</Link>
           <Link to="/teachers" style={styles.link}>Our Teachers</Link>
           <Link to="/track-record" style={styles.link}>Track Record</Link>
-          <Link to="/testimonials" style={styles.link}>Student Experience</Link>
+          <Link to="/review" style={styles.link}>Student Experience</Link>
           <Link to="/careers" style={styles.link}>Careers</Link>
         </div>
 
