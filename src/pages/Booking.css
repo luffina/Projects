@@ -55,7 +55,7 @@ body {
 }
 
 .step.active {
-  background-color: #00c4cc;
+  background-color: #e7f75a;
 }
 
 .booking-form, .booking-summary, .booking-terms {
@@ -175,7 +175,7 @@ body {
 }
 
 .step.active {
-  background-color: #00c3cc;
+  background-color: #e772c0;
 }
 
 h2 {
@@ -237,7 +237,7 @@ input {
 
 .next-btn,
 button {
-  background-color: #00c3cc;
+  background-color: #c44baf;
   color: white;
   padding: 10px 18px;
   margin-top: 2rem;
