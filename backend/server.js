@@ -1,29 +1,42 @@
-// server.js
+// backend/server.js
+
 const express = require('express');
+const bodyParser = require('body-parser');
 const cors = require('cors');
-const Stripe = require('stripe');
-require('dotenv').config();
 
 const app = express();
-const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
+const PORT = 5000;
 
 app.use(cors());
-app.use(express.json());
+app.use(bodyParser.json());
 
-app.post('/create-payment-intent', async (req, res) => {
-  try {
-    const { amount } = req.body;
+let users = []; // In-memory user store (use a DB like MongoDB in production)
 
-    const paymentIntent = await stripe.paymentIntents.create({
-      amount,
-      currency: 'aud',
-      automatic_payment_methods: { enabled: true },
-    });
+// Signup route
+app.post('/api/signup', (req, res) => {
+  const { email, password } = req.body;
 
-    res.send({ clientSecret: paymentIntent.client_secret });
-  } catch (err) {
-    res.status(500).send({ error: err.message });
+  const userExists = users.find(user => user.email === email);
+  if (userExists) {
+    return res.json({ success: false, message: 'Email already registered.' });
   }
+
+  users.push({ email, password });
+  return res.json({ success: true });
 });
 
-app.listen(4242, () => console.log('🚀 Server running on http://localhost:4242'));
+// Login route
+app.post('/api/login', (req, res) => {
+  const { email, password } = req.body;
+
+  const user = users.find(user => user.email === email && user.password === password);
+  if (!user) {
+    return res.json({ success: false, message: 'Invalid email or password.' });
+  }
+
+  return res.json({ success: true });
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});

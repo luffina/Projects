@@ -9,9 +9,11 @@ export default function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    const validUser = users.find((user) => user.email === email && user.password === password);
 
-    if (email === 'demo@gmail.com' && password === '123') {
-      navigate('/dashboard'); // Change this route if needed
+    if (validUser) {
+      navigate('/dashboard');
     } else {
       alert('Invalid credentials. Please try again.');
     }
@@ -36,6 +38,13 @@ export default function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit">Login</button>
+
+        <p>
+          Don’t have an account?{' '}
+          <span onClick={() => navigate('/signup')} style={{ color: '#00c3c3', cursor: 'pointer' }}>
+            Sign Up
+          </span>
+        </p>
       </form>
     </div>
   );
