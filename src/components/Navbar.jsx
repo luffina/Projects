@@ -26,8 +26,8 @@ export default function Navbar() {
             <Link to="#">ABOUT US</Link>
             <ul className="dropdown">
               <li><Link to="/about">Leadership Team</Link></li>
-              <li><Link to="/method">The TLL Method</Link></li>
-              <li><Link to="/curriculum">Our Curriculum</Link></li>
+              {/* <li><Link to="/method">The TLL Method</Link></li> */}
+              <li><Link to="/method">Our Curriculum</Link></li>
               <li><Link to="/teachers">Our Teachers</Link></li>
               <li><Link to="/track-record">Track Record</Link></li>
               <li><Link to="/review">Student Experience</Link></li>
