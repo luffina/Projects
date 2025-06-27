@@ -11,29 +11,31 @@ export default function Courses({ showEnrollLinks }) {
         "Nurture a love for science early with our Montessori curriculum. Designed to boost intellect and creativity in young learners.",
     },
     {
-      title: "SEAL Training",
+      title: "SEAL & Accelerated Programs (Year 6)",
       description:
-        "Tailored for advanced learners preparing for Selective Entry Accelerated Learning. Deep dives into advanced science topics.",
+        "Advanced learning for gifted Year 6 students aiming for private school scholarships (ACER, Edutest, AAS).",
+      link: "/courses/seal-program"
     },
     {
-      title: "Selective School Entry",
+      title: "Selective Prep Program (Selective School Entry)",
       description:
-        "Guidance and preparation for high-achieving students aiming for selective school entry. Push your academic limits with expert help.",
+        "Targeted preparation for selective school entrance exams with curriculum aligned to ACER and Edutest.",
+      link: "/courses/selective-prep"
     },
     {
       title: "VCESE (Victorian Curriculum)",
       description:
-        "Guidance and preparation for high-achieving students aiming for selective school entry. Push your academic limits with expert help.",
+        "Comprehensive support for students following the Victorian Curriculum to achieve academic excellence.",
     },
     {
       title: "Primary (Year 1–6)",
       description:
-        "Help your child understand the world through science during their most curious years. Build abstract reasoning and strong foundations.",
+        "Help your child understand the world through science. Build reasoning and strong foundational knowledge.",
     },
     {
       title: "Secondary (Year 7–10)",
       description:
-        "A term-wise program to strengthen science knowledge and build confidence through fun, supportive, and structured learning.",
+        "Strengthen science skills with a structured term-wise program. Build confidence and subject mastery.",
     }
   ];
 
@@ -42,11 +44,24 @@ export default function Courses({ showEnrollLinks }) {
       <h2 className="courses-heading">Our Courses</h2>
       <div className="courses-grid">
         {courseList.map((course, index) => (
-          <div key={index} className="courses-card">
+          <div
+            key={index}
+            className="courses-card"
+            onClick={() => {
+              if (course.link) {
+                navigate(course.link);
+              }
+            }}
+            style={{ cursor: course.link ? 'pointer' : 'default' }}
+          >
             <h3 className="courses-card-title">{course.title}</h3>
             <p className="courses-card-text">{course.description}</p>
             {course.title === "Montessori Education (Age 2–6)" ? (
-              <a href="https://rdreamzmontessori.com/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://rdreamzmontessori.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <button className="enroll-button explore-button">Explore</button>
               </a>
             ) : showEnrollLinks ? (

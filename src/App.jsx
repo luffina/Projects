@@ -17,6 +17,11 @@ import IcasPrep from './components/Special/ICASPrep';
 import NaplanPrep from './components/Special/NaplanPrep';
 import Footer from './components/Footer';
 import ScrollToTop from './ScrollToTop';
+import Curriculum from './components/Special/Curriculam';
+import SealProgram from './components/Courses/SealProgram';
+import SelectivePrep from './components/Courses/SelectivePrep';
+import Review from './components/Review';
+import Method from './components/Special/method';
 
 // Wrapper to conditionally show Navbar
 function LayoutWrapper() {
@@ -41,6 +46,11 @@ function LayoutWrapper() {
         <Route path="/amc-olympiad" element={<AmcOlympiad />} />
         <Route path="/special/icas" element={<IcasPrep />} />
         <Route path="/special/naplan" element={<NaplanPrep />} />
+        <Route path="/curriculum" element={<Curriculum />} />
+        <Route path="/courses/seal-program" element={<SealProgram />} />
+        <Route path="/courses/selective-prep" element={<SelectivePrep />} />
+        <Route path="/review" element={<Review />} />
+        <Route path="/method" element={<Method />} />
         {/* Add more routes as needed */}
       </Routes>
       <Footer />

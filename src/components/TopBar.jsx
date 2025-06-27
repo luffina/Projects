@@ -22,7 +22,7 @@ export default function TopBar() {
       {/* Quick Links */}
       <div className="top-right">
         <Link to="/courses">Courses</Link>
-        <Link to="/fees">Fee Payment</Link>
+        <Link to="/book">Fee Payment</Link>
         <Link to="/login">Parent Portal</Link>
         <Link to="/virtual-learning">Virtual Learning</Link>
         <Link to="/library">E-Library</Link>
