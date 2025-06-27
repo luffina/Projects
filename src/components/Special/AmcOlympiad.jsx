@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function AmcOlympiad() {
   return (
@@ -111,6 +112,9 @@ export default function AmcOlympiad() {
           For more details, visit the <a href="https://www.amt.edu.au/amc" target="_blank" rel="noreferrer">AMT official site</a>.
         </p>
       </div>
+      <Link to="/enroll" className="enroll-link">
+                <button className="enroll-button">Enroll Now</button>
+              </Link>
     </div>
   );
 }

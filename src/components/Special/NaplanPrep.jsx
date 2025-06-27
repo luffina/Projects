@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function NaplanPrep() {
   return (
@@ -64,6 +65,9 @@ export default function NaplanPrep() {
           Reach out for a schedule and fees: <strong>info@mathscilab.com.au</strong> or <strong>+61 484 791 052</strong>
         </p>
       </div>
+      <Link to="/enroll" className="enroll-link">
+                <button className="enroll-button">Enroll Now</button>
+              </Link>
     </div>
   );
 }
