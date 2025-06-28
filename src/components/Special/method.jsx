@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Method.css';
 
 export default function Method() {
@@ -31,6 +32,9 @@ export default function Method() {
           <li key={index} className={`slide-in slide-delay-${index}`}>{item}</li>
         ))}
       </ul>
+      <Link to="/enroll" className="enroll-link">
+                <button className="enroll-button">Enroll Now</button>
+              </Link>
     </div>
   );
 }

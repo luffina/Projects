@@ -37,6 +37,7 @@ export default function Courses({ showEnrollLinks }) {
       description:
         "Strengthen science skills with a structured term-wise program. Build confidence and subject mastery.",
     }
+    
   ];
 
   return (

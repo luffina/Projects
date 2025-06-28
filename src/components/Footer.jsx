@@ -48,7 +48,7 @@ export default function Footer() {
         <div style={styles.column}>
           <h4 style={styles.heading}>ABOUT US</h4>
           <Link to="/courses" style={styles.link}>Leadership Team</Link>
-          <Link to="/method" style={styles.link}>The TLL Method</Link>
+          {/* <Link to="/method" style={styles.link}>The TLL Method</Link> */}
           <Link to="/curriculum" style={styles.link}>Our Curriculum</Link>
           <Link to="/teachers" style={styles.link}>Our Teachers</Link>
           <Link to="/track-record" style={styles.link}>Track Record</Link>

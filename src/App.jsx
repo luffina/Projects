@@ -22,7 +22,10 @@ import SealProgram from './components/Courses/SealProgram';
 import SelectivePrep from './components/Courses/SelectivePrep';
 import Review from './components/Review';
 import Method from './components/Special/method';
-
+import Centres from './components/Centres';
+import Signup from './pages/Signup';
+import Chatbot from './components/Chatbot';
+import StripeWrapper from './pages/Payment/StripeWrapper';
 // Wrapper to conditionally show Navbar
 function LayoutWrapper() {
   const location = useLocation();
@@ -51,6 +54,11 @@ function LayoutWrapper() {
         <Route path="/courses/selective-prep" element={<SelectivePrep />} />
         <Route path="/review" element={<Review />} />
         <Route path="/method" element={<Method />} />
+        <Route path="/centres" element={<Centres />} />
+          <Route path="/curriculum/:year" element={<Curriculum />} />
+        <Route path="/signup" element={<Signup />} />
+<Route path="/chatbot" element={<Chatbot />} />
+        <Route path="/payment" element={<StripeWrapper />} />
         {/* Add more routes as needed */}
       </Routes>
       <Footer />

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Curriculum() {
   return (
@@ -34,6 +35,9 @@ export default function Curriculum() {
           </p>
         </div>
       </div>
+      <Link to="/enroll" className="enroll-link">
+                <button className="enroll-button">Enroll Now</button>
+              </Link>
     </div>
   );
 }

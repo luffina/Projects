@@ -1,22 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Dashboard.css';
-import demoData from './demo.json';
 import Calendar from './Calender';
 
 export default function Dashboard() {
-  const [courses, setCourses] = useState([]);
-  const [userId, setUserId] = useState('');
+  const [paidYear, setPaidYear] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const storedId = localStorage.getItem('userId');
-    const fallbackId = 'demo_12233';
-    const uid = storedId || fallbackId;
-    setUserId(uid);
-    const user = demoData.find(u => u.userId === uid);
-    if (user) setCourses(user.courses);
-  }, []);
+    const user = JSON.parse(localStorage.getItem('currentUser'));
+
+    if (!user) {
+      alert('Please log in to access the dashboard.');
+      navigate('/login');
+      return;
+    }
+
+    setPaidYear(user.paidYear); // e.g. 3 if user paid for Year 3
+  }, [navigate]);
+
+  const handleExplore = () => {
+    if (paidYear) {
+      navigate(`/curriculum/year-${paidYear}`);
+    } else {
+      alert('No curriculum access found. Please complete payment.');
+    }
+  };
 
   const handleNavClick = (path) => {
     navigate(path);
@@ -32,15 +41,15 @@ export default function Dashboard() {
         <img src="/assets/header4.jpg" alt="English Class" />
       </div>
 
-      {/* Course Overview Navigation */}
+      {/* Navigation */}
       <div className="dashboard-menu">
         <div onClick={() => handleNavClick('/dashboard')}>Montessori</div>
-        <div onClick={() => handleNavClick('/dashboard')}>SEAL</div>
-        <div onClick={() => handleNavClick('/dashboard')}>Selective Entry</div>
-        <div onClick={() => handleNavClick('/dashboard')}>VCESE</div>
+        <div onClick={() => handleNavClick('/seal-program')}>SEAL</div>
+        <div onClick={() => handleNavClick('/selective')}>Selective Entry</div>
+        <div onClick={() => handleNavClick('/vces')}>VCESE</div>
       </div>
 
-      {/* About Section */}
+      {/* About */}
       <section className="dashboard-about">
         <h2>About RDreamz Montessori & MathSciLab</h2>
         <p>
@@ -50,31 +59,21 @@ export default function Dashboard() {
         </p>
       </section>
 
-      {/* Course Categories */}
-      <section className="dashboard-categories">
-        <h3>Course Categories</h3>
-        <div className="category-grid">
-          <div className="category-card">Scholarship Preparation</div>
-          <div className="category-card">Selective School Program</div>
-          <div className="category-card">Olympiad Studies</div>
-          <div className="category-card">Special Writing</div>
-          <div className="category-card">Public Speaking</div>
-          <div className="category-card">Robotics</div>
-          <div className="category-card">VCE / University Entry</div>
-        </div>
-      </section>
-
-      {/* Featured Courses */}
+      {/* Featured Course */}
       <section className="dashboard-featured">
-        <h3>Featured Courses</h3>
-        <div className="featured-grid">
-          {[1, 2, 3, 4, 5, 6, 7].map(level => (
-            <div className="featured-card" key={level}>
-              <div>Year {level} English Term 1</div>
-              <button>Explore</button>
+        <h3>Your Curriculum</h3>
+        {paidYear ? (
+          <div className="featured-grid">
+            <div className="featured-card">
+              <div>Year {paidYear} Curriculum Access</div>
+              <button onClick={handleExplore}>Explore</button>
             </div>
-          ))}
-        </div>
+          </div>
+        ) : (
+          <p style={{ textAlign: 'center', marginTop: '1rem' }}>
+            🚫 You haven’t purchased a curriculum yet.
+          </p>
+        )}
       </section>
 
       {/* Calendar */}

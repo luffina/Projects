@@ -1,7 +1,8 @@
-// BookingPage.jsx
 import React, { useState } from 'react';
 import './Booking.css';
 import courseData from './courseSchedule.json';
+import { PaymentElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import StripeWrapper from './Payment/StripeWrapper';
 
 export default function BookingPage() {
   const [step, setStep] = useState(1);
@@ -9,6 +10,9 @@ export default function BookingPage() {
   const [selectedCourse, setSelectedCourse] = useState('');
   const [selectedSessions, setSelectedSessions] = useState([]);
   const [formFilled, setFormFilled] = useState(false);
+
+  const stripe = useStripe();
+  const elements = useElements();
 
   const nextStep = () => {
     if (step === 2 && !formFilled) {
@@ -39,8 +43,20 @@ export default function BookingPage() {
     setSelectedSessions([session]);
   };
 
-  const handleSubmit = () => {
-    window.location.href = 'https://buy.stripe.com/test_bIYdRn8aW6ue9WU6oo';
+  const handleStripeSubmit = async (e) => {
+    e.preventDefault();
+    if (!stripe || !elements) return;
+
+    const result = await stripe.confirmPayment({
+      elements,
+      confirmParams: {
+        return_url: window.location.origin + '/success',
+      },
+    });
+
+    if (result.error) {
+      alert(result.error.message);
+    }
   };
 
   return (
@@ -123,53 +139,34 @@ export default function BookingPage() {
           <h2>Personal & Student Details</h2>
           <form onChange={() => setFormFilled(true)}>
             <div className="form-grid">
-              <select required><option value="">Title</option><option>Mr</option><option>Ms</option><option>Mrs</option><option>Dr</option></select>
+              <select required><option value="">Title</option><option>Mr</option><option>Ms</option><option>Mrs</option></select>
               <input required placeholder="First Name" />
               <input required placeholder="Last Name" />
-              <select required><option value="">Gender</option><option>Male</option><option>Female</option><option>Other</option></select>
+              <select required><option value="">Gender</option><option>Male</option><option>Female</option></select>
               <input required placeholder="Address" />
               <input required placeholder="Postcode" />
               <input required placeholder="Suburb" />
-              <select required><option value="">State</option><option>VIC</option><option>NSW</option><option>QLD</option><option>SA</option><option>TAS</option><option>WA</option><option>NT</option><option>ACT</option></select>
-              <select required><option value="">Country</option><option>Australia</option></select>
-              <input placeholder="Home Phone" />
-              <input placeholder="Work Phone" />
-              <input required placeholder="Mobile" />
+              <select required><option value="">State</option><option>VIC</option><option>NSW</option><option>QLD</option></select>
               <input required placeholder="Email" />
-              <input placeholder="Fax" />
-              <label><input type="checkbox" /> Subscribe to Email List</label>
-
-              <input required placeholder="Student First Name" />
-              <input required placeholder="Student Last Name" />
-              <select required><option value="">Year Level</option><option>Year 3</option><option>Year 4</option><option>Year 5</option><option>Year 6</option><option>Year 7</option><option>Year 8</option><option>Year 9</option><option>Year 10</option><option>Year 11</option><option>Year 12</option></select>
-              <input required placeholder="As of Year" value="2025" readOnly />
-              <input required placeholder="DOB (dd/mm/yyyy)" />
-              <select required><option value="">Gender</option><option>Male</option><option>Female</option><option>Other</option></select>
-              <input placeholder="First Language" />
-              <input placeholder="Address If Different" />
-              <input placeholder="Current School Attending" />
-              <input placeholder="Main School Applying To" />
-              <input placeholder="Additional School Applying To" />
-              <input placeholder="Food Requirement" />
-              <input placeholder="Medical Section" />
-              <input placeholder="Allergy" />
-              <input placeholder="Asthma" />
-              <input placeholder="Other Life-Threatening Condition" />
+              <input required placeholder="Mobile" />
             </div>
           </form>
-
           <button className="next-btn" onClick={nextStep}>NEXT</button>
         </div>
       )}
 
       {step === 3 && (
         <div className="step-content">
-          <h2>Confirm Booking</h2>
+          <h2>Confirm Booking & Payment</h2>
           <label><input type="checkbox" required /> I agree to the Terms and Conditions</label>
-          <div className="btn-group">
-            <button onClick={prevStep}>BACK</button>
-            <button onClick={handleSubmit}>PAY NOW</button>
-          </div>
+          <form onSubmit={handleStripeSubmit}>
+            <PaymentElement />
+            <StripeWrapper />
+            <div className="btn-group">
+              <button type="button" onClick={prevStep}>BACK</button>
+              <button type="submit">PAY NOW</button>
+            </div>
+          </form>
         </div>
       )}
     </div>

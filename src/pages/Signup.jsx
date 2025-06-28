@@ -1,6 +1,5 @@
-// src/pages/Signup.jsx
 import React, { useState } from 'react';
-import './Login.css'; // Reuse same CSS
+import './Login.css';
 import { useNavigate } from 'react-router-dom';
 
 export default function Signup() {
@@ -10,10 +9,26 @@ export default function Signup() {
 
   const handleSignup = (e) => {
     e.preventDefault();
-    // Simulate backend call
-    console.log('Signup data:', { email, password });
-    alert('Signup successful! You can now log in.');
-    navigate('/login');
+
+    // Check if account already exists
+    const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
+    const alreadyExists = existingUsers.find(user => user.email === email);
+
+    if (alreadyExists) {
+      alert('Account already exists! Please log in.');
+      navigate('/login');
+      return;
+    }
+
+    // Save new user
+    const updatedUsers = [...existingUsers, { email, password, paidYear: null }];
+    localStorage.setItem('users', JSON.stringify(updatedUsers));
+
+    // Optional: auto-login
+    localStorage.setItem('currentUser', JSON.stringify({ email, paidYear: null }));
+
+    alert('Signup successful!');
+    navigate('/dashboard');
   };
 
   return (
