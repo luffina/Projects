@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Testimonials.css';
+import { Link } from 'react-router-dom';
 
 const testimonials = [
   {
@@ -33,6 +34,9 @@ export default function Testimonials() {
         <p className="quote">“{testimonials[index].text}”</p>
         <p className="author">— {testimonials[index].name}</p>
       </div>
+      <Link to="/enroll" className="enroll-link">
+                <button className="enroll-button">Enroll Now</button>
+              </Link>
     </section>
   );
 }
