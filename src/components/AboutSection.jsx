@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './About.css';
 
 export default function About() {
@@ -23,6 +24,9 @@ export default function About() {
             </p>
           </div>
         </div>
+         <Link to="/enroll" className="enroll-link">
+                <button className="enroll-button">Enroll Now</button>
+              </Link>
       </div>
     </section>
   );

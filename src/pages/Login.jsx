@@ -9,16 +9,15 @@ export default function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    const users = JSON.parse(localStorage.getItem('users') || '[]');
-    const validUser = users.find((user) => user.email === email && user.password === password);
-
-    if (validUser) {
-      navigate('/dashboard');
-    } else {
-      alert('Invalid credentials. Please try again.');
-    }
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+const found = users.find(u => u.email === email && u.password === password);
+if (found) {
+  localStorage.setItem('currentUser', JSON.stringify(found));
+  navigate('/dashboard');
+} else {
+  alert('Invalid credentials');
+}
   };
-
   return (
     <div className="login-container">
       <form onSubmit={handleLogin} className="login-form">

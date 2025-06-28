@@ -1,21 +1,22 @@
 const express = require('express');
 const cors = require('cors');
-const { Configuration, OpenAIApi } = require('openai');
+const OpenAI = require('openai');
 require('dotenv').config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const openai = new OpenAIApi(
-  new Configuration({ apiKey: process.env.OPENAI_API_KEY })
-);
+// Use the updated OpenAI SDK constructor
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
 
 app.post('/chat', async (req, res) => {
   const { message } = req.body;
 
   try {
-    const chat = await openai.createChatCompletion({
+    const chat = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
       messages: [
         {
@@ -29,7 +30,7 @@ app.post('/chat', async (req, res) => {
       ],
     });
 
-    res.json({ reply: chat.data.choices[0].message.content });
+    res.json({ reply: chat.choices[0].message.content });
   } catch (error) {
     console.error('OpenAI error:', error.message);
     res.status(500).json({ reply: 'Something went wrong.' });

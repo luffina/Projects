@@ -24,7 +24,7 @@ export default function TopBar() {
         <Link to="/courses">Courses</Link>
         <Link to="/book">Fee Payment</Link>
         <Link to="/login">Parent Portal</Link>
-        <Link to="/virtual-learning">Virtual Learning</Link>
+        <Link to="/chatbot">Virtual Learning</Link>
         <Link to="/library">E-Library</Link>
       </div>
     </div>
