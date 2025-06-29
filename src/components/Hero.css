@@ -68,7 +68,7 @@
 }
 
 .tagline {
-  color: #16a34a;
+  color: #f8fcfa;
   font-weight: 600;
   font-size: 0.9rem;
   margin-bottom: 1rem;
@@ -79,11 +79,11 @@
   font-weight: 800;
   margin-bottom: 1rem;
   line-height: 1.2;
-  color: #001F42;
+  color: #fdfdfd;
 }
 
 .subtitle {
-  color: #333;
+  color: #fcfbfb;
   margin-bottom: 2rem;
   font-size: 1.1rem;
 }

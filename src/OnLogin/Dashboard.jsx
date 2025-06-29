@@ -9,13 +9,11 @@ export default function Dashboard() {
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('currentUser'));
-
     if (!user) {
       alert('Please log in to access the dashboard.');
       navigate('/login');
       return;
     }
-
     setPaidYear(user.paidYear); // e.g. 3 if user paid for Year 3
   }, [navigate]);
 
@@ -27,27 +25,43 @@ export default function Dashboard() {
     }
   };
 
-  const handleNavClick = (path) => {
-    navigate(path);
+  const handleLogout = () => {
+    localStorage.removeItem('currentUser');
+    navigate('/login');
   };
 
   return (
-    <div className="dashboard-new">
-      {/* Header Images */}
-      <div className="dashboard-banner">
-        <img src="/assets/header1.jpg" alt="Montessori" />
-        <img src="/assets/header2.jpg" alt="Science Lab" />
-        <img src="/assets/header3.jpg" alt="Learning" />
-        <img src="/assets/header4.jpg" alt="English Class" />
-      </div>
+    
 
-      {/* Navigation */}
+    <div>
+      {/* Header Images */}
+        <div className="dashboard-banner">
+          <img src="/assets/header1.png" alt="Montessori" />
+          <img src="/assets/header2.png" alt="Science Lab" />
+          <img src="/assets/header3.png" alt="Learning" />
+          <img src="/assets/header4.png" alt="English Class" />
+        </div>
+
+        {/* Navigation */}
       <div className="dashboard-menu">
-        <div onClick={() => handleNavClick('/dashboard')}>Montessori</div>
-        <div onClick={() => handleNavClick('/seal-program')}>SEAL</div>
-        <div onClick={() => handleNavClick('/selective')}>Selective Entry</div>
-        <div onClick={() => handleNavClick('/vces')}>VCESE</div>
+        <div onClick={() => window.open('https://rdreamzmontessori.com/', '_blank', 'noopener,noreferrer')}>
+          Montessori
+        </div>
+        <div onClick={() => window.open('/courses/seal-program', '_blank', 'noopener,noreferrer')}>
+          SEAL
+        </div>
+        <div onClick={() => window.open('/courses/selective-prep', '_blank', 'noopener,noreferrer')}>
+          Selective Entry
+        </div>
+        <div onClick={() => window.open('/courses/vce', '_blank', 'noopener,noreferrer')}>
+          VCESE
+        </div>
+        <div className="dashboard-actions">
+          <button onClick={() => navigate('/profile')}>Profile</button>
+          <button onClick={handleLogout}>Logout</button>
+        </div>
       </div>
+      
 
       {/* About */}
       <section className="dashboard-about">

@@ -58,7 +58,7 @@ export default function Footer() {
 
         <div style={styles.column}>
           <h4 style={styles.heading}>OUR PROGRAMMES</h4>
-          <Link to="/programmes" style={styles.link}>All Programmes</Link>
+          <Link to="/curriculum/year-1" style={styles.link}>All Programmes</Link>
         </div>
 
         <div style={styles.column}>
@@ -76,8 +76,8 @@ export default function Footer() {
 
         <div style={styles.column}>
           <h4 style={styles.heading}>CONNECT</h4>
-          <Link to="/whatsapp" style={styles.link}>WhatsApp Us</Link>
-          <Link to="/contact" style={styles.link}>Contact Us</Link>
+          <Link to="https://wa.me/61484791052" target="_blank" rel="noopener noreferrer" style={styles.link}>WhatsApp Us</Link>
+          <Link to="/enroll" style={styles.link}>Contact Us</Link>
           <Link to="/login" style={styles.link}>Parent Portal</Link>
           <Link to="/virtual-learning" style={styles.link}>Virtual Learning</Link>
           <Link to="/library" style={styles.link}>E-Library</Link>

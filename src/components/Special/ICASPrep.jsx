@@ -1,9 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-<<<<<<< HEAD
-
-=======
->>>>>>> a4b43ca9002daa12b8dfd250a3d69931ab22a1f8
 export default function IcasPrep() {
   return (
     <div style={styles.wrapper}>
