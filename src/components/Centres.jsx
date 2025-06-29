@@ -26,34 +26,77 @@ export default function Centres() {
 
   return (
     <div style={{
-      padding: '2rem',
+      padding: '3rem 2rem',
       display: 'flex',
       flexWrap: 'wrap',
       justifyContent: 'center',
       gap: '2rem',
-      backgroundColor: '#f9f9f9'
+      backgroundColor: '#f8fafc',
+      minHeight: '100vh'
     }}>
       {centres.map((centre, index) => (
         <div key={index} style={{
-          width: '300px',
-          background: '#fff',
-          borderRadius: '10px',
-          boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+          width: '320px',
+          background: '#ffffff',
+          borderRadius: '16px',
+          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
           overflow: 'hidden',
-          textAlign: 'center'
+          textAlign: 'center',
+          transition: 'all 0.3s ease',
+          border: '1px solid rgba(0, 0, 0, 0.05)',
+          cursor: 'pointer'
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = 'translateY(-8px)';
+          e.currentTarget.style.boxShadow = '0 16px 48px rgba(0, 0, 0, 0.12)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = 'translateY(0)';
+          e.currentTarget.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.08)';
         }}>
-          <img
-            src={centre.image}
-            alt={centre.name}
-            style={{
-              width: '100%',
-              height: '200px',
-              objectFit: 'cover'
-            }}
-          />
-          <div style={{ padding: '1rem' }}>
-            <h3 style={{ color: '#001f42', marginBottom: '0.5rem' }}>{centre.name}</h3>
-            <p style={{ color: '#555' }}>{centre.address}</p>
+          <div style={{
+            position: 'relative',
+            overflow: 'hidden'
+          }}>
+            <img
+              src={centre.image}
+              alt={centre.name}
+              style={{
+                width: '100%',
+                height: '220px',
+                objectFit: 'cover',
+                transition: 'transform 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'scale(1.05)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'scale(1)';
+              }}
+            />
+          </div>
+          <div style={{ 
+            padding: '1.5rem',
+            background: 'linear-gradient(to bottom, #ffffff, #fafbfc)'
+          }}>
+            <h3 style={{ 
+              color: '#001f42', 
+              marginBottom: '0.75rem',
+              fontSize: '1.25rem',
+              fontWeight: '600',
+              letterSpacing: '-0.025em'
+            }}>
+              {centre.name}
+            </h3>
+            <p style={{ 
+              color: '#64748b',
+              fontSize: '0.95rem',
+              lineHeight: '1.5',
+              margin: 0,
+              fontWeight: '400'
+            }}>
+              {centre.address}
+            </p>
           </div>
         </div>
       ))}

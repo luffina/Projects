@@ -25,17 +25,21 @@ export default function Courses({ showEnrollLinks }) {
     {
       title: "VCESE (Victorian Curriculum)",
       description:
-        "Comprehensive support for students following the Victorian Curriculum to achieve academic excellence.",
+      "Comprehensive support for students following the Victorian Curriculum to achieve academic excellence.",
+       link: "/courses/vce"
     },
+
     {
       title: "Primary (Year 1–6)",
       description:
         "Help your child understand the world through science. Build reasoning and strong foundational knowledge.",
+      link: "/courses/primary"
     },
     {
       title: "Secondary (Year 7–10)",
       description:
         "Strengthen science skills with a structured term-wise program. Build confidence and subject mastery.",
+      link: "/courses/secondary"
     }
     
   ];

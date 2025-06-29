@@ -19,7 +19,7 @@ export default function Navbar() {
   return (
     <nav className={`main-navbar ${isSticky ? 'sticky show' : ''}`}>
       <div className="nav-content">
-        <h1 className="brand-logo">MATHSCILAB Education</h1>
+        <h1 className="brand-logo">MATHSCILAB</h1>
 <ul className="nav-links">
   {/* About Us Dropdown */}
   <li className="has-dropdown">
@@ -30,7 +30,7 @@ export default function Navbar() {
       <li><Link to="/method">Our Curriculum</Link></li>
       <li><Link to="/teachers">Our Teachers</Link></li>
       <li><Link to="/track-record">Track Record</Link></li>
-      <li><Link to="/review">Student Experience</Link></li>
+      <li><Link to="/testimonials">Student Experience</Link></li>
       <li><Link to="/careers">Careers</Link></li>
     </ul>
   </li>
@@ -50,9 +50,9 @@ export default function Navbar() {
     </ul>
   </li>
 
-  <li><Link to="/special/vce">VCE Coaching</Link></li>
-  <li><Link to="/courses/selectiveprep">Selective School Entry</Link></li>
-  <li><Link to="/courses/seal">SEAL Training</Link></li>
+  <li><Link to="/courses/vce">VCE Coaching</Link></li>
+  <li><Link to="/courses/selective-prep">Selective School Entry</Link></li>
+  <li><Link to="/courses/seal-program">SEAL Training</Link></li>
 
   {/* Special Programmes Dropdown */}
   <li className="has-dropdown">
@@ -82,7 +82,7 @@ export default function Navbar() {
       WHATSAPP US
     </a>
   </li>
-  <li><Link to="/enroll" className="contact-btn">CONTACT US</Link></li>
+  <li><Link to="/enroll" className="contact-btn">CONTACTUS</Link></li>
 </ul>
       </div>
     </nav>
