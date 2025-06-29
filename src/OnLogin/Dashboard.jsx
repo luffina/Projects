@@ -96,10 +96,7 @@ export default function Dashboard() {
         <Calendar />
       </section>
 
-      {/* Footer */}
-      <footer className="dashboard-footer">
-        <p>&copy; 2025 RDreamz Montessori & MathSciLab. All rights reserved.</p>
-      </footer>
+      
     </div>
   );
 }
