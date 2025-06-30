@@ -83,7 +83,7 @@ export default function Profile() {
           style={styles.input}
         />
 
-        <label style={styles.label}>Paid Year Level</label>
+        <label style={styles.label}>Enrolled Year </label>
         <input
           name="paidYear"
           type="number"

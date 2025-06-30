@@ -9,7 +9,7 @@ import Home from "./components/Home";
 import Courses from "./components/Courses";
 import EnrollNow from "./pages/EnrollNow";
 import Navbar from "./components/Navbar";
-import Booking from "./pages/Booking";
+// import Booking from "./pages/Booking";
 import About from "./components/AboutSection";
 import Login from "./pages/Login";
 import Dashboard from "./OnLogin/Dashboard";
@@ -34,7 +34,6 @@ import Primary from "./components/Courses/Primary";
 import Secondary from "./components/Courses/Secondary";
 import VCE from "./components/Courses/VCE";
 import Profile from "./OnLogin/Profile";
-
 // Wrapper to conditionally show Navbar
 function LayoutWrapper() {
   const location = useLocation();
@@ -49,7 +48,7 @@ function LayoutWrapper() {
         <Route path="/courses" element={<Courses showEnrollLinks={true} />} />
         <Route path="/enroll" element={<EnrollNow />} />
         <Route path="/about" element={<About />} />
-        <Route path="/book" element={<Booking />} />
+        {/* <Route path="/book" element={<Booking />} /> */}
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/calendar" element={<Calendar />} />
@@ -66,11 +65,13 @@ function LayoutWrapper() {
         <Route path="/curriculum/:year" element={<Curriculum />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/chatbot" element={<Chatbot />} />
-        <Route path="/payment" element={<StripeWrapper />} />
+        {/* <Route path="/payment" element={<StripeWrapper />} /> */}
         <Route path="/courses/primary" element={<Primary />} />
         <Route path="/courses/secondary" element={<Secondary />} />
         <Route path="/courses/vce" element={<VCE />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/book" element={<StripeWrapper />} />
+
         {/* Add more routes as needed */}
       </Routes>
       <Footer />

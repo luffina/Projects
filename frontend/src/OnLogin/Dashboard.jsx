@@ -80,7 +80,7 @@ export default function Dashboard() {
           <div className="featured-grid">
             <div className="featured-card">
               <div>Year {paidYear} Curriculum Access</div>
-              <button onClick={handleExplore}>Explore</button>
+<button onClick={() => navigate("/curriculum")}>Explore Curriculum</button>
             </div>
           </div>
         ) : (

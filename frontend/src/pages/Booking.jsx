@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Booking.css';
 import courseData from './courseSchedule.json';
-import { PaymentElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import StripeWrapper from './Payment/StripeWrapper';
+import { PaymentElement, useStripe, useElements, Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+
 
 export default function BookingPage() {
   const [step, setStep] = useState(1);
@@ -10,9 +11,25 @@ export default function BookingPage() {
   const [selectedCourse, setSelectedCourse] = useState('');
   const [selectedSessions, setSelectedSessions] = useState([]);
   const [formFilled, setFormFilled] = useState(false);
+  const [clientSecret, setClientSecret] = useState('');
 
   const stripe = useStripe();
   const elements = useElements();
+
+  useEffect(() => {
+    if (selectedSessions.length > 0) {
+      const totalAmount = selectedSessions.reduce((sum, s) => sum + parseFloat(s.fee.replace('$', '')), 0);
+
+      fetch('http://localhost:5000/api/create-payment-intent', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amount: Math.round(totalAmount * 100) }) // Stripe accepts cents
+      })
+        .then(res => res.json())
+        .then(data => setClientSecret(data.clientSecret))
+        .catch(err => console.error('Error creating payment intent:', err));
+    }
+  }, [selectedSessions]);
 
   const nextStep = () => {
     if (step === 2 && !formFilled) {
@@ -154,21 +171,33 @@ export default function BookingPage() {
           <button className="next-btn" onClick={nextStep}>NEXT</button>
         </div>
       )}
+{step === 3 && (
+  <div className="step-content">
+    <h2>Confirm Booking & Payment</h2>
+    <label>
+      <input type="checkbox" required /> I agree to the Terms and Conditions
+    </label>
 
-      {step === 3 && (
-        <div className="step-content">
-          <h2>Confirm Booking & Payment</h2>
-          <label><input type="checkbox" required /> I agree to the Terms and Conditions</label>
-          <form onSubmit={handleStripeSubmit}>
-            <PaymentElement />
-            <StripeWrapper />
-            <div className="btn-group">
-              <button type="button" onClick={prevStep}>BACK</button>
-              <button type="submit">PAY NOW</button>
-            </div>
-          </form>
+    {elements && (
+      <form onSubmit={e => {
+        localStorage.setItem("currentUser", JSON.stringify({
+          email: "student@example.com",
+          year: selectedSessions[0]?.year,
+          subject: selectedSessions[0]?.subject
+        }));
+        handleStripeSubmit(e);
+      }}>
+        <PaymentElement />
+        <div className="btn-group">
+          <button type="button" onClick={prevStep}>BACK</button>
+          <button type="submit">PAY NOW</button>
         </div>
-      )}
+      </form>
+    )}
+  </div>
+)}
+
+
     </div>
   );
 }
