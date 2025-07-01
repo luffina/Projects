@@ -37,21 +37,25 @@ Phone Number: ${data.phone}
     window.location.href = mailtoLink;
   };
 
+  
   return (
     <div className="enroll-container">
       <h1 className="enroll-heading">🎓 Enroll Now</h1>
       <p className="enroll-sub">Register instantly to begin your child's learning journey!</p>
       
       <form className="enroll-form" onSubmit={handleSubmit}>
-        <input type="text" name="parentName" placeholder="👨 Parent Name *" required />
-        <input type="email" name="email" placeholder="📧 Email *" required />
         <input type="text" name="studentName" placeholder="👦 Student Name *" required />
-        <input type="text" name="yearLevel" placeholder="🎓 Year Level *" required />
+         <input type="text" name="yearLevel" placeholder="🎓 Year Level *" required />
+        <input type="text" name="parentName" placeholder="👨 Parent Name *" required/>
+        
+       
+        <input type="email" name="email" placeholder="📧 Email *" required />
         
         <select name="centre" required>
           <option value="">Select Centre *</option>
-          <option value="Mount Waverley">Mount Waverley</option>
           <option value="Balwyn">Balwyn</option>
+          <option value="Mount Waverley">Mount Waverley</option>
+          
         </select>
         
         <select name="courseType" required>
@@ -65,6 +69,7 @@ Phone Number: ${data.phone}
           <option value="General">General</option>
           <option value="Olympiad">Olympiad</option>
           <option value="ICAS">ICAS</option>
+          <option value="ICAS">Beyond School Enrichment</option>
         </select>
         
         <input type="tel" name="phone" placeholder="📞 Phone Number *" required />

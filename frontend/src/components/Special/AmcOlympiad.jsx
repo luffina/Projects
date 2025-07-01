@@ -103,7 +103,7 @@ export default function AmcOlympiad() {
 
         <h2>📝 How to Register</h2>
         <ol>
-          <li>Email: <a href="mailto:info@mathscilab.com.au">info@mathscilab.com.au</a> or call <strong>+61 484 791 052</strong></li>
+          <li>Email: <a href="mailto:info@mathscilab@outlook.com">info@mathscilab.com.au</a> or call <strong>+61 484 791 052</strong></li>
           <li>Provide student name, year level, and division</li>
           <li>We’ll guide you with registration and materials</li>
         </ol>

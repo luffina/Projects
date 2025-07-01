@@ -6,24 +6,24 @@ export default function Courses({ showEnrollLinks }) {
   const navigate = useNavigate();
   const courseList = [
     {
-      title: "Montessori Education (Age 2–6)",
+      title: "Montessori Education    (Age 2–6)",
       description:
         "Nurture a love for science early with our Montessori curriculum. Designed to boost intellect and creativity in young learners.",
     },
     {
-      title: "SEAL & Accelerated Programs (Year 6)",
+      title: "SEAL & Accelerated Programs  (Year 3-6)",
       description:
-        "Advanced learning for gifted Year 6 students aiming for private school scholarships (ACER, Edutest, AAS).",
+        "Advanced learning for gifted  students aiming for private school scholarships (ACER, Edutest, AAS).",
       link: "/courses/seal-program"
     },
     {
-      title: "Selective Prep Program (Selective School Entry)",
+      title: "Selective Prep Program (Year 9)",
       description:
         "Targeted preparation for selective school entrance exams with curriculum aligned to ACER and Edutest.",
       link: "/courses/selective-prep"
     },
     {
-      title: "VCESE (Victorian Curriculum)",
+      title: "VCE Coaching",
       description:
       "Comprehensive support for students following the Victorian Curriculum to achieve academic excellence.",
        link: "/courses/vce"
@@ -69,6 +69,7 @@ export default function Courses({ showEnrollLinks }) {
               >
                 <button className="enroll-button explore-button">Explore</button>
               </a>
+
             ) : showEnrollLinks ? (
               <Link to="/enroll" className="enroll-link">
                 <button className="enroll-button">Enroll Now</button>
@@ -78,6 +79,7 @@ export default function Courses({ showEnrollLinks }) {
             )}
           </div>
         ))}
+
       </div>
       <div className="book-now-wrapper">
         <button className="book-now-button" onClick={() => navigate('/book')}>

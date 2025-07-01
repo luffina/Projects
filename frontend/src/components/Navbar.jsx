@@ -35,20 +35,23 @@ export default function Navbar() {
     </ul>
   </li>
 
-  {/* Programmes Dropdown */}
   <li className="has-dropdown">
-    <Link to="#">OUR PROGRAMMES</Link>
-    <ul className="dropdown">
-      {Array.from({ length: 12 }, (_, i) => {
-        const yearLabel = `year-${i + 1}`;
-        return (
-          <li key={i + 1}>
-            <Link to={`/curriculum/${yearLabel}`}>Year {i + 1}</Link>
-          </li>
-        );
-      })}
-    </ul>
-  </li>
+  <Link to="#">OUR PROGRAMMES</Link>
+  <ul className="dropdown">
+    <li>
+      <Link to="/courses/primary">Primary (Year 1–6)</Link>
+    </li>
+    <li>
+      <Link to="/courses/secondary">Secondary (Year 7–10)</Link>
+    </li>
+    <li>
+      <Link to="/courses/vce">VCE Coaching (Year 11–12)</Link>
+    </li>
+    <li>
+      <Link to="/courses/beyond">Beyond School Enrichment </Link>
+    </li>
+  </ul>
+</li>
 
   <li><Link to="/courses/vce">VCE Coaching</Link></li>
   <li><Link to="/courses/selective-prep">Selective School Entry</Link></li>

@@ -67,7 +67,7 @@ export default function IcasPrep() {
         </ul>
 
         <p>
-          Contact us to enrol: <strong>info@mathscilab.com.au</strong> or <strong>+61 484 791 052</strong>
+          Contact us to enrol: <strong>info@mathscilab@outlook.com</strong> or <strong>+61 484 791 052</strong>
         </p>
       </div>
       <Link to="/enroll" className="enroll-link">

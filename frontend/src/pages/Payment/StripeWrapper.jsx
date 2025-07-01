@@ -10,7 +10,7 @@ export default function StripeWrapper() {
 
   useEffect(() => {
     const selectedAmount = 50; // e.g., $10.00 (in cents)
-    fetch('http://localhost:5000/api/create-payment-intent', {
+    fetch(' https://mathscilab.netlify.app/api/create-payment-intent', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ amount: selectedAmount }),

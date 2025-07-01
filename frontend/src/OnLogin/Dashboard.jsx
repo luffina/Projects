@@ -24,6 +24,7 @@ export default function Dashboard() {
       alert('No curriculum access found. Please complete payment.');
     }
   };
+  
 
   const handleLogout = () => {
     localStorage.removeItem('currentUser');
