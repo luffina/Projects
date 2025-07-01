@@ -1,11 +1,15 @@
 // backend/server.js
+<<<<<<< HEAD
 
+=======
+>>>>>>> 794487c86945daa5df2efb0bb6e2da32058c2fab
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
 const PORT = 5000;
+<<<<<<< HEAD
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -19,12 +23,58 @@ app.post('/api/signup', (req, res) => {
   const userExists = users.find(user => user.email === email);
   if (userExists) {
     return res.json({ success: false, message: 'Email already registered.' });
+=======
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+
+app.use(cors());
+app.use(bodyParser.json());
+
+let users = []; // Use DB in production
+
+// Signup route
+app.post('/api/signup', (req, res) => {
+  const { email, password } = req.body;
+  const userExists = users.find(user => user.email === email);
+  if (userExists) {
+    return res.json({ success: false, message: 'Email already registered.' });
+  }
+  users.push({ email, password });
+  return res.json({ success: true });
+});
+
+// Login route
+app.post('/api/login', (req, res) => {
+  const { email, password } = req.body;
+  const user = users.find(user => user.email === email && user.password === password);
+  if (!user) {
+    return res.json({ success: false, message: 'Invalid email or password.' });
+  }
+  return res.json({ success: true });
+});
+
+// 💳 Stripe Payment Route
+app.post('/api/create-payment-intent', async (req, res) => {
+  const { amount } = req.body; // amount in cents, e.g. 1500 = $15.00
+
+  try {
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount,
+      currency: 'aud',
+      payment_method_types: ['card'],
+    });
+
+    res.send({ clientSecret: paymentIntent.client_secret });
+  } catch (err) {
+    console.error('Stripe Error:', err);
+    res.status(500).json({ error: err.message });
+>>>>>>> 794487c86945daa5df2efb0bb6e2da32058c2fab
   }
 
   users.push({ email, password });
   return res.json({ success: true });
 });
 
+<<<<<<< HEAD
 // Login route
 app.post('/api/login', (req, res) => {
   const { email, password } = req.body;
@@ -39,4 +89,10 @@ app.post('/api/login', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
+=======
+app.listen(PORT, () => {
+ const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+>>>>>>> 794487c86945daa5df2efb0bb6e2da32058c2fab
 });

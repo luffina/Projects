@@ -24,6 +24,7 @@ export default function Dashboard() {
       alert('No curriculum access found. Please complete payment.');
     }
   };
+  
 
   const handleLogout = () => {
     localStorage.removeItem('currentUser');
@@ -80,7 +81,7 @@ export default function Dashboard() {
           <div className="featured-grid">
             <div className="featured-card">
               <div>Year {paidYear} Curriculum Access</div>
-              <button onClick={handleExplore}>Explore</button>
+<button onClick={() => navigate("/curriculum")}>Explore Curriculum</button>
             </div>
           </div>
         ) : (
