@@ -189,20 +189,6 @@ export default function BookingPage() {
       <input type="checkbox" required /> I agree to the Terms and Conditions
     </label>
 
-<<<<<<< HEAD:src/pages/Booking.jsx
-      {step === 3 && (
-        <div className="step-content">
-          <h2>Confirm Booking & Payment</h2>
-          <label><input type="checkbox" required /> I agree to the Terms and Conditions</label>
-          <form onSubmit={handleStripeSubmit}>
-            <PaymentElement />
-            <StripeWrapper />
-            <div className="btn-group">
-              <button type="button" onClick={prevStep}>BACK</button>
-              <button type="submit">PAY NOW</button>
-            </div>
-          </form>
-=======
     {elements && (
       <form onSubmit={e => {
         localStorage.setItem("currentUser", JSON.stringify({
@@ -216,7 +202,6 @@ export default function BookingPage() {
         <div className="btn-group">
           <button type="button" onClick={prevStep}>BACK</button>
           <button type="submit">PAY NOW</button>
->>>>>>> 794487c86945daa5df2efb0bb6e2da32058c2fab:frontend/src/pages/Booking.jsx
         </div>
       </form>
     )}
