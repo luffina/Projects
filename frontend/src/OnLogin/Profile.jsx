@@ -83,11 +83,7 @@ export default function Profile() {
           style={styles.input}
         />
 
-<<<<<<< HEAD:src/OnLogin/Profile.jsx
-        <label style={styles.label}>Paid Year Level</label>
-=======
         <label style={styles.label}>Enrolled Year </label>
->>>>>>> 794487c86945daa5df2efb0bb6e2da32058c2fab:frontend/src/OnLogin/Profile.jsx
         <input
           name="paidYear"
           type="number"

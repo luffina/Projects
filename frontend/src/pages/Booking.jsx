@@ -1,17 +1,7 @@
-<<<<<<< HEAD:src/pages/Booking.jsx
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Booking.css';
 import courseData from './courseSchedule.json';
 import { PaymentElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import StripeWrapper from './Payment/StripeWrapper';
-=======
-import React, { useState, useEffect } from 'react';
-import './Booking.css';
-import courseData from './courseSchedule.json';
-import { PaymentElement, useStripe, useElements, Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
-
->>>>>>> 794487c86945daa5df2efb0bb6e2da32058c2fab:frontend/src/pages/Booking.jsx
 
 export default function BookingPage() {
   const [step, setStep] = useState(1);
@@ -19,7 +9,6 @@ export default function BookingPage() {
   const [selectedCourse, setSelectedCourse] = useState('');
   const [selectedSessions, setSelectedSessions] = useState([]);
   const [formFilled, setFormFilled] = useState(false);
-  const [clientSecret, setClientSecret] = useState('');
 
   const stripe = useStripe();
   const elements = useElements();
@@ -34,13 +23,9 @@ export default function BookingPage() {
         body: JSON.stringify({ amount: Math.round(totalAmount * 100) }) // Stripe accepts cents
       })
         .then(res => res.json())
-        .then(data => setClientSecret(data.clientSecret))
         .catch(err => console.error('Error creating payment intent:', err));
     }
   }, [selectedSessions]);
-
-  const stripe = useStripe();
-  const elements = useElements();
 
   const nextStep = () => {
     if (step === 2 && !formFilled) {

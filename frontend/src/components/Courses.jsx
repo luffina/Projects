@@ -11,15 +11,6 @@ export default function Courses({ showEnrollLinks }) {
         "Nurture a love for science early with our Montessori curriculum. Designed to boost intellect and creativity in young learners.",
     },
     {
-<<<<<<< HEAD:src/components/Courses.jsx
-      title: "SEAL & Accelerated Programs (Year 6)",
-      description:
-        "Advanced learning for gifted Year 6 students aiming for private school scholarships (ACER, Edutest, AAS).",
-      link: "/courses/seal-program"
-    },
-    {
-      title: "Selective Prep Program (Selective School Entry)",
-=======
       title: "SEAL & Accelerated Programs  (Year 3-6)",
       description:
         "Advanced learning for gifted  students aiming for private school scholarships (ACER, Edutest, AAS).",
@@ -27,7 +18,6 @@ export default function Courses({ showEnrollLinks }) {
     },
     {
       title: "Selective Prep Program (Year 9)",
->>>>>>> 794487c86945daa5df2efb0bb6e2da32058c2fab:frontend/src/components/Courses.jsx
       description:
         "Targeted preparation for selective school entrance exams with curriculum aligned to ACER and Edutest.",
       link: "/courses/selective-prep"

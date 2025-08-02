@@ -1,28 +1,3 @@
-<<<<<<< HEAD:src/pages/Payment/StripeWrapper.jsx
-// StripeWrapper.jsx
-import React from 'react';
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
-import Booking from '../Booking';
-
-const stripePromise = loadStripe('pk_test_51Oms7l...');
-
-const StripeWrapper = () => {
-  const options = {
-    mode: 'payment',
-    amount: 1099, // replace with selectedSessions[0]?.fee if dynamic
-    currency: 'aud',
-  };
-
-  return (
-    <Elements stripe={stripePromise} options={options}>
-      <Booking />
-    </Elements>
-  );
-};
-
-export default StripeWrapper;
-=======
 import React, { useEffect, useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
@@ -61,4 +36,3 @@ export default function StripeWrapper() {
     </Elements>
   );
 }
->>>>>>> 794487c86945daa5df2efb0bb6e2da32058c2fab:frontend/src/pages/Payment/StripeWrapper.jsx
